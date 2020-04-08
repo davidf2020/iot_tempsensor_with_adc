@@ -1,0 +1,232 @@
+// These arguments were used when this file was generated. They will be automatically applied on subsequent loads 
+// via the GUI or CLI invocations. Run CLI with '--help' for additional information on how to override these arguments.
+// @cliArgs --board "/ti/boards/CC26X2R1_LAUNCHXL" --product "simplelink_cc13x2_26x2_sdk@3.40.00.02"
+// @versions {"data":"2019083011","timestamp":"2019083011","tool":"1.2.952","templates":"2019083011"}
+
+var AESCBC = scripting.addModule("/ti/drivers/AESCBC");
+var AESCCM = scripting.addModule("/ti/drivers/AESCCM");
+var AESECB = scripting.addModule("/ti/drivers/AESECB");
+var CCFG = scripting.addModule("/ti/devices/CCFG");
+var DMA = scripting.addModule("/ti/drivers/DMA");
+var ECDH = scripting.addModule("/ti/drivers/ECDH");
+var ECDSA = scripting.addModule("/ti/drivers/ECDSA");
+var ECJPAKE = scripting.addModule("/ti/drivers/ECJPAKE");
+var Button = scripting.addModule("/ti/drivers/apps/Button");
+var LED = scripting.addModule("/ti/drivers/apps/LED");
+var NVS = scripting.addModule("/ti/drivers/NVS");
+var Power = scripting.addModule("/ti/drivers/Power");
+var RF = scripting.addModule("/ti/drivers/RF");
+var SHA2 = scripting.addModule("/ti/drivers/SHA2");
+var TRNG = scripting.addModule("/ti/drivers/TRNG");
+var UART = scripting.addModule("/ti/drivers/UART");
+var zstack = scripting.addModule("/ti/zstack/zstack");
+var AESCBC1 = AESCBC.addInstance();
+var AESCCM1 = AESCCM.addInstance();
+var AESECB1 = AESECB.addInstance();
+var ECDH1 = ECDH.addInstance();
+var ECDSA1 = ECDSA.addInstance();
+var ECJPAKE1 = ECJPAKE.addInstance();
+var Button1 = Button.addInstance();
+var Button2 = Button.addInstance();
+var LED1 = LED.addInstance();
+var LED2 = LED.addInstance();
+var NVS1 = NVS.addInstance();
+var NVS2 = NVS.addInstance();
+var SHA21 = SHA2.addInstance();
+var TRNG1 = TRNG.addInstance();
+var UART1 = UART.addInstance();
+var ADC = scripting.addModule("/ti/drivers/ADC");
+var ADC1 = ADC.addInstance();
+// Enable Bootloader - Enable ROM Bootloader, for flashing from external host
+CCFG.enableBootloader = true;
+// Enable Bootloader Backdoor - When enabling the Bootloader Backdoor, the Bootloader can be activated externally by pulling a pin, even when a valid flash image is present. Note, enabling the backdoor allows an external host to read back a flash image from the device
+CCFG.enableBootloaderBackdoor = true;
+// Bootloader Backdoor DIO - DIO (pin) to trigger Bootloader backdoor, this pin is only needed at boot
+CCFG.dioBootloaderBackdoor = 13;
+// Trigger Level of Bootloader Backdoor - Active high or low on selected DIO to open boot loader backdoor
+CCFG.levelBootloaderBackdoor = "Active low";
+// Name
+CCFG.ccfgTemplate.$name = "ti_devices_CCFGTemplate0";
+var Board = scripting.addModule("/ti/drivers/Board");
+var DriverLib = scripting.addModule("/ti/devices/DriverLib");
+// Device Type - The logical device type for the ZigBee node.
+zstack.deviceType = "zed";
+// deviceTypeReadOnly
+zstack.deviceTypeReadOnly = true;
+// Name
+zstack.rf.$name = "ti_zstack_rf_zstack_rf0";
+// Name
+zstack.rf.radioConfig.$name = "ti_devices_radioconfig_settings_ieee_15_40";
+// Name
+zstack.rf.radioConfig.codeExportConfig.$name = "ti_devices_radioconfig_code_export_param0";
+var multi_stack_validate = scripting.addModule("/ti/easylink/multi_stack_validate");
+// Name
+zstack.pm.$name = "ti_zstack_pm_zstack_pm0";
+// Name
+zstack.network.$name = "ti_zstack_network_zstack_network0";
+// Name
+zstack.advanced.$name = "ti_zstack_advanced_zstack_advanced0";
+// Name
+zstack.advanced.routing.$name = "ti_zstack_advanced_zstack_routing0";
+// Name
+zstack.advanced.packetSending.$name = "ti_zstack_advanced_zstack_packet_sending0";
+// Name
+zstack.advanced.tableSize.$name = "ti_zstack_advanced_zstack_table_size0";
+// Name
+AESCBC1.$name = "CONFIG_AESCBC_0";
+// Name
+AESCCM1.$name = "CONFIG_AESCCM_0";
+// Interrupt Priority - Crypto peripheral interrupt priority
+AESCCM1.interruptPriority = "2";
+// Name
+AESECB1.$name = "CONFIG_AESECB_0";
+// Interrupt Priority - Crypto peripheral interrupt priority
+AESECB1.interruptPriority = "1";
+// Name
+ECDH1.$name = "CONFIG_ECDH_0";
+// Name
+ECDSA1.$name = "CONFIG_ECDSA_0";
+// Name
+ECJPAKE1.$name = "CONFIG_ECJPAKE_0";
+// Name - The C/C++ identifier used in applications as the index parameter passed to Button runtime APIs
+Button1.$name = "CONFIG_BTN_LEFT";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Button1.$hardware = system.deviceData.board.components["BTN-1"];
+// Pull - Specifies the internal pull-up or pull-down resistor configuration of this GPIO pin.
+Button1.gpioPin.pull = "Pull Up";
+// Interrupt Trigger - Specifies when or if interrupts are triggered
+Button1.gpioPin.interruptTrigger = "Falling Edge";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+Button1.gpioPin.$name = "CONFIG_GPIO_BTN1";
+// Name
+Button1.gpioPin.pinInstance.$name = "CONFIG_PIN_BTN1";
+// Name - The C/C++ identifier used in applications as the index parameter passed to Button runtime APIs
+Button2.$name = "CONFIG_BTN_RIGHT";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+Button2.$hardware = system.deviceData.board.components["BTN-2"];
+// Pull - Specifies the internal pull-up or pull-down resistor configuration of this GPIO pin.
+Button2.gpioPin.pull = "Pull Up";
+// Interrupt Trigger - Specifies when or if interrupts are triggered
+Button2.gpioPin.interruptTrigger = "Falling Edge";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+Button2.gpioPin.$name = "CONFIG_GPIO_BTN2";
+// Name
+Button2.gpioPin.pinInstance.$name = "CONFIG_PIN_BTN2";
+// Name - The C/C++ identifier used in applications as the index parameter passed to LED runtime APIs
+LED1.$name = "CONFIG_LED_RED";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+LED1.$hardware = system.deviceData.board.components.LED_RED;
+// Mode - Select the GPIO mode
+LED1.gpioPin.mode = "Output";
+// Callback Function - The name of the callback function called when this GPIO pin triggers an interrupt, or 'NULL' if it's specified at runtime
+LED1.gpioPin.callbackFunction = "";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+LED1.gpioPin.$name = "CONFIG_GPIO_RLED";
+// Name
+LED1.gpioPin.pinInstance.$name = "CONFIG_PIN_RLED";
+// Name - The C/C++ identifier used in applications as the index parameter passed to LED runtime APIs
+LED2.$name = "CONFIG_LED_GREEN";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+LED2.$hardware = system.deviceData.board.components.LED_GREEN;
+// Mode - Select the GPIO mode
+LED2.gpioPin.mode = "Output";
+// Callback Function - The name of the callback function called when this GPIO pin triggers an interrupt, or 'NULL' if it's specified at runtime
+LED2.gpioPin.callbackFunction = "";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+LED2.gpioPin.$name = "CONFIG_GPIO_GLED";
+// Name
+LED2.gpioPin.pinInstance.$name = "CONFIG_PIN_GLED";
+// Name - The C/C++ identifier used in applications as the index parameter passed to NVS runtime APIs
+NVS1.$name = "CONFIG_NVSINTERNAL";
+// Name
+NVS1.internalFlash.$name = "ti_drivers_nvs_NVSCC26XX0";
+// Region Base - Base address of the region. Must be aligned on an integer multiple of the sector size.
+NVS1.internalFlash.regionBase = 0x52000;
+// Region Size - Size of the region in bytes. Must be a non-zero multiple of the Sector Size
+NVS1.internalFlash.regionSize = 0x4000;
+// Name - The C/C++ identifier used in applications as the index parameter passed to NVS runtime APIs
+NVS2.$name = "CONFIG_NVSEXTERNAL";
+// NVS Type - Specifies the type of non-volatile storage used by the NVS region.
+NVS2.nvsType = "External";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+NVS2.$hardware = system.deviceData.board.components.MX25R8035F;
+// Name
+NVS2.externalFlash.$name = "ti_drivers_nvs_NVSSPI25X0";
+// Region Size - Size of the region in bytes. Must be a non-zero multiple of the Sector Size
+NVS2.externalFlash.regionSize = 0x256000;
+// Verify Buffer Size - Size of the write verification buffer in bytes.
+NVS2.externalFlash.verifyBufferSize = 64;
+var NVSSPI25XDevice1 = NVS2.externalFlash.spiFlashDevice; // Create reference
+// Name
+NVSSPI25XDevice1.$name = "CONFIG_NVS_SPI_0";
+// Name - The C/C++ identifier used in applications as the index parameter passed to GPIO runtime APIs
+NVSSPI25XDevice1.slaveSelectGpioInstance.$name = "CONFIG_GPIO_0";
+// Mode - Select the GPIO mode
+NVSSPI25XDevice1.slaveSelectGpioInstance.mode = "Output";
+// Callback Function - The name of the callback function called when this GPIO pin triggers an interrupt, or 'NULL' if it's specified at runtime
+NVSSPI25XDevice1.slaveSelectGpioInstance.callbackFunction = "";
+// Name
+NVSSPI25XDevice1.slaveSelectGpioInstance.pinInstance.$name = "CONFIG_PIN_0";
+var SPI1 = NVSSPI25XDevice1.sharedSpiInstance; // Create reference
+// Name - The C/C++ identifier used in applications as the index parameter passed to SPI runtime APIs
+SPI1.$name = "CONFIG_SPI_0";
+// Name
+SPI1.sclkPinInstance.$name = "CONFIG_PIN_SPI_SCLK";
+// Name
+SPI1.misoPinInstance.$name = "CONFIG_PIN_SPI_MISO";
+// Name
+SPI1.mosiPinInstance.$name = "CONFIG_PIN_SPI_MOSI";
+// Name
+SPI1.spi.$name = "MySSI1";
+// Name
+SHA21.$name = "CONFIG_SHA2_0";
+// Name - The C/C++ identifier used in applications as the index parameter passed to TRNG runtime APIs
+TRNG1.$name = "CONFIG_TRNG_0";
+// Use Hardware - Select the hardware to use, or 'None' to use available header pins
+UART1.$hardware = system.deviceData.board.components.XDS110UART;
+// Name - The C/C++ identifier used in applications as the index parameter passed to UART runtime APIs
+UART1.$name = "CONFIG_DISPLAY_UART";
+// Name
+UART1.txPinInstance.$name = "CONFIG_PIN_UART_TX";
+// Name
+UART1.rxPinInstance.$name = "CONFIG_PIN_UART_RX";
+// Name
+UART1.uart.$name = "MyUART1";
+// Name - The C/C++ identifier used in applications as the index parameter passed to ADC runtime APIs
+ADC1.$name = "CONFIG_ADC_0";
+// Name
+ADC1.adc.$name = "MyADC1";
+// Name
+ADC1.adcPinInstance.$name = "CONFIG_PIN_1";
+// Suggest solution
+Button1.gpioPin.gpioPin.$suggestSolution = "19";
+// Suggest solution
+Button2.gpioPin.gpioPin.$suggestSolution = "20";
+// Suggest solution
+LED1.gpioPin.gpioPin.$suggestSolution = "11";
+// Suggest solution
+LED2.gpioPin.gpioPin.$suggestSolution = "12";
+// Suggest solution
+NVSSPI25XDevice1.slaveSelectGpioInstance.gpioPin.$suggestSolution = "30";
+// Suggest solution
+SPI1.spi.$suggestSolution = "SSI0";
+// Suggest solution
+SPI1.spi.sclkPin.$suggestSolution = "16";
+// Suggest solution
+SPI1.spi.misoPin.$suggestSolution = "14";
+// Suggest solution
+SPI1.spi.mosiPin.$suggestSolution = "15";
+// Suggest solution
+SPI1.spi.dmaRxChannel.$suggestSolution = "DMA_CH3";
+// Suggest solution
+SPI1.spi.dmaTxChannel.$suggestSolution = "DMA_CH4";
+// Suggest solution
+UART1.uart.$suggestSolution = "UART1";
+// Suggest solution
+UART1.uart.txPin.$suggestSolution = "8";
+// Suggest solution
+UART1.uart.rxPin.$suggestSolution = "7";
+// Suggest solution
+ADC1.adc.$suggestSolution = "ADC0";
+// Suggest solution
+ADC1.adc.adcPin.$suggestSolution = "36";
